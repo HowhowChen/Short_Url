@@ -5,7 +5,9 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
-router.get('/copy', (req, res) => {
+router.post('/', (req, res) => {
+  const originUrl = req.body.originUrl.trim()
+  console.log(originUrl)
   res.render('copy')
 })
 
