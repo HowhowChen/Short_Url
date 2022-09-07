@@ -1,11 +1,13 @@
 <div class="row mt-5">
   <div class="col-12 col-md-7 mx-auto">
-    <form action="/" method="POST">
+    <form action="/" method="POST" id="form" novalidate>
       <div class="input-group mb-3">
-        <input type="text" name="originUrl" class="form-control bg-light" placeholder="Input Url Here" aria-label="origin-url">
+        <input type="url" name="originUrl" class="form-control bg-light" placeholder="Input Url Here" aria-label="origin-url" required>
+        <div class="valid-feedback">輸入正確!</div>
+        <div class="invalid-feedback">請輸入開頭為http(s)://</div>
       </div>
       <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-outline-primary" type="submit">Shorten</button>
+        <button class="btn btn-outline-primary" type="submit" id="submitButton">Shorten</button>
       </div>
     </form>
   </div>
