@@ -1,10 +1,12 @@
 <div class="row mt-5">
   <div class="col-12 col-md-7 mx-auto">
-    <div class="input-group mb-3">
-      <input type="text" class="form-control bg-light" placeholder="Input Url Here" aria-label="Server">
-    </div>
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-outline-primary" type="button">Shorten</button>
-    </div>
+    <form action="/" method="POST">
+      <div class="input-group mb-3">
+        <input type="text" name="origin-url" class="form-control bg-light" placeholder="Input Url Here" aria-label="origin-url">
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-outline-primary" type="submit">Shorten</button>
+      </div>
+    </form>
   </div>
 </div>
