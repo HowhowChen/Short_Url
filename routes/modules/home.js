@@ -7,8 +7,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const originUrl = req.body.originUrl.trim()
-  console.log(originUrl)
-  res.render('copy')
+  const shortUrl = originUrl
+  res.render('copy', { shortUrl })
 })
 
 module.exports = router
