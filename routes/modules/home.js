@@ -2,7 +2,8 @@ const express = require('express')
 const Url = require('../../models/Url')
 const shortenUrl = require('../../utils/shortenUrl')
 const router = express.Router()
-let projectUrl = 'http://localhost/'
+const port = process.env.PORT || 3000
+let projectUrl = `http://howhowshorturl.herokuapp.com:${port}/`
 
 router.get('/', (req, res) => {
   res.render('index')
@@ -22,10 +23,11 @@ router.post('/', (req, res) => {
 
 router.get('/:shortUrl', (req, res) => {
   const shortUrl = req.params.shortUrl
-  return Url.find({ shortUrl })
+  return Url.findOne({ shortUrl })
     .lean()
     .then(url => {
-      res.redirect(url.originUrl)
+      const originUrl = url.originUrl
+      res.redirect(originUrl)
     })
 })
 
