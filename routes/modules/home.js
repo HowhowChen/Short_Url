@@ -19,10 +19,8 @@ router.post('/', (req, res) => {
       if (!url) {
         const shortUrl = shortenUrl()
         copyUrl = projectUrl + shortUrl
-        Url.create({ originUrl, shortUrl })
-        .then(() => {
-          return res.render('copy', { copyUrl, success: 1 })
-        }) 
+        return Url.create({ originUrl, shortUrl })
+        .then(() => res.render('copy', { copyUrl, success: 1 })) 
         .catch(error => console.log(error))
       }
       //  重複
