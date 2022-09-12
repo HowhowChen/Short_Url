@@ -7,7 +7,7 @@ db.on('error', () => {
   console.log('MongoDB Error')
 })
 
-db.once('on', () => {
+db.once('open', () => {
   console.log('MongoDB Connect')
 })
 
